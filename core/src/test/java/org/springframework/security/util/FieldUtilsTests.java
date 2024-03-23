@@ -29,10 +29,14 @@ public class FieldUtilsTests {
 	@Test
 	public void gettingAndSettingProtectedFieldIsSuccessful() throws Exception {
 		Object tc = new TestClass();
-		assertThat(FieldUtils.getProtectedFieldValue("protectedField", tc)).isEqualTo("x");
+		assertThat(FieldUtils.getProtectedFieldValue("protectedField", tc))
+				.isEqualTo("x");
 		assertThat(FieldUtils.getFieldValue(tc, "nested.protectedField")).isEqualTo("z");
+
 		FieldUtils.setProtectedFieldValue("protectedField", tc, "y");
+
 		assertThat(FieldUtils.getProtectedFieldValue("protectedField", tc)).isEqualTo("y");
+
 		assertThatIllegalStateException().isThrownBy(() -> FieldUtils.getProtectedFieldValue("nonExistentField", tc));
 	}
 

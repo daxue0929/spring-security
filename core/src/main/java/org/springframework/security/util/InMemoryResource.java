@@ -28,6 +28,7 @@ import org.springframework.util.Assert;
  * interface.
  * <p>
  * Used to create a bean factory from an XML string, rather than a file.
+ * 用于从XML字符串而不是文件创建bean工厂。
  * </p>
  *
  * @author Luke Taylor
